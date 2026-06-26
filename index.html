@@ -179,6 +179,9 @@
       object-fit: cover;
       object-position: center;
       z-index: 0;
+      image-rendering: auto;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
 
     .hero::before {
@@ -415,6 +418,9 @@
       object-fit: cover;
       object-position: top center;
       z-index: 1;
+      image-rendering: auto;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
 
     /* Colonne droite : infos + corps */
@@ -1341,6 +1347,16 @@
         });
       });
     }
+
+    /* ── SUPPRESSION DU TRANSFORM APRÈS ANIMATION (netteté images) */
+    document.querySelectorAll('.rv').forEach(function (el) {
+      el.addEventListener('transitionend', function (e) {
+        if (e.propertyName === 'transform' && el.classList.contains('vis')) {
+          el.style.transform = 'none';
+          el.style.willChange = 'auto';
+        }
+      }, { once: false });
+    });
 
     /* ── ANNÉE AUTO ────────────────────────────────────────────── */
     var yr = document.getElementById('yr');
