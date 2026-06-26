@@ -41,8 +41,8 @@
       --t-hero:    clamp(3.2rem, 7.5vw, 5.8rem);
 
       /* Espacements */
-      --gap:      clamp(1.5rem, 5vw, 4rem);
-      --section:  clamp(5rem, 10vw, 9rem);
+      --gap:      clamp(1.2rem, 5vw, 4rem);
+      --section:  clamp(3.5rem, 10vw, 9rem);
 
       /* Easing */
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -185,6 +185,7 @@
     .nav-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
     .nav-tel {
+      display: none; /* caché sur mobile, visible en desktop */
       font-size: var(--t-sm);
       font-weight: 500;
       color: var(--accent);
@@ -195,9 +196,17 @@
     .nav-tel:hover, .nav-tel:focus-visible { opacity: 0.65; }
     .nav-tel:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
+    /* Lien tel dans le menu mobile */
+    .nav-menu-tel a {
+      color: var(--accent) !important;
+      font-weight: 600 !important;
+    }
+
     /* Desktop nav */
     @media (min-width: 769px) {
       .nav-hamburger { display: none; }
+      .nav-tel { display: block; }
+      .nav-menu-tel { display: none; }
       .nav-links {
         position: static;
         flex-direction: row;
@@ -283,7 +292,7 @@
       height: 1px;
       width: 0;
       background: var(--accent);
-      margin-bottom: 2.2rem;
+      margin-bottom: clamp(1.2rem, 4vw, 2.2rem);
     }
     .hero-rule.go {
       animation: drawLine 0.85s var(--ease) 0.1s forwards;
@@ -315,7 +324,7 @@
 
     .hero-maitre {
       display: block;
-      font-size: var(--t-hero-sm);
+      font-size: clamp(1.4rem, 6vw, 3.5rem);
       font-weight: 400;
       font-style: italic;
       color: var(--secondary);
@@ -329,10 +338,14 @@
     /* Nom principal — les lettres se lèvent une par une */
     .hero-surname {
       display: block;
-      font-size: var(--t-hero);
+      font-size: clamp(1.75rem, 9vw, 3rem);
       font-weight: 700;
       color: var(--ink);
       overflow: hidden;
+      white-space: nowrap;
+    }
+    @media (min-width: 520px) {
+      .hero-surname { font-size: var(--t-hero); }
     }
     .hero-surname .c {
       display: inline-block;
@@ -480,7 +493,8 @@
     /* Colonne gauche : photo */
     .about-photo-col {
       position: static;
-      max-width: 260px;
+      max-width: 240px;
+      margin: 0 auto;
     }
 
     @media (min-width: 820px) {
@@ -489,6 +503,7 @@
         position: sticky;
         top: 5.5rem;
         max-width: none;
+        margin: 0;
       }
     }
 
@@ -950,6 +965,7 @@
       <li><a href="#domaines">Domaines</a></li>
       <li><a href="#accompagnement">Accompagnement</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li class="nav-menu-tel"><a href="tel:0646093898" aria-label="Appeler le 06 46 09 38 98">06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</a></li>
     </ul>
     <a href="tel:0646093898" class="nav-tel" aria-label="Appeler le 06 46 09 38 98">06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</a>
     <button class="nav-hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
