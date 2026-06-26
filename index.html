@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maître Sixtine Rauwel, avocate pénaliste au Barreau de Lille. Défense pénale, garde à vue, instruction judiciaire, comparution immédiate, cour d'assises, partie civile.">
+  <meta name="robots" content="index, follow">
+  <title>Maître Sixtine Rauwel — Avocate pénaliste à Lille</title>
+
+  <!-- Preconnect pour les fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Spectral : display serif gravé, institutionnel · Jost : sans géométrique neutre -->
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================================
+       TOKENS
+       ================================================================ */
+    :root {
+      --bg:            #EDEEF0;   /* Marbre froid — fond principal */
+      --surface:       #F5F5F7;   /* Surfaces légères (about, contact) */
+      --ink:           #12121A;   /* Encre légale — texte principal */
+      --secondary:     #64646E;   /* Gris ardoise — textes secondaires */
+      --rule:          #C8C9D1;   /* Trait institutionnel */
+      --accent:        #2B3E58;   /* Bleu prussien — l'unique couleur vive */
+      --accent-hover:  #1E2E44;
+      --accent-light:  #E6ECF3;
+
+      --font-display: 'Spectral', Georgia, serif;
+      --font-body:    'Jost', system-ui, sans-serif;
+
+      /* Tailles fluides */
+      --t-xs:   clamp(0.7rem,  1.4vw, 0.8rem);
+      --t-sm:   clamp(0.85rem, 1.7vw, 0.95rem);
+      --t-base: clamp(1rem,    1.9vw, 1.1rem);
+      --t-lg:   clamp(1.1rem,  2.4vw, 1.35rem);
+      --t-xl:   clamp(1.3rem,  3vw,   1.65rem);
+      --t-2xl:  clamp(1.6rem,  3.5vw, 2.2rem);
+      --t-hero-sm: clamp(2.2rem, 5vw,  3.5rem);
+      --t-hero:    clamp(3.2rem, 7.5vw, 5.8rem);
+
+      /* Espacements */
+      --gap:      clamp(1.5rem, 5vw, 4rem);
+      --section:  clamp(5rem, 10vw, 9rem);
+
+      /* Easing */
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ================================================================
+       RESET & BASE
+       ================================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .skip-link {
+      position: fixed;
+      top: -100%;
+      left: 1rem;
+      z-index: 9999;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.5rem 1.25rem;
+      font-family: var(--font-body);
+      font-size: var(--t-sm);
+      font-weight: 500;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ================================================================
+       NAVIGATION
+       ================================================================ */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 0 var(--gap);
+      height: 64px;
+      transition: background 0.4s var(--ease), border-bottom 0.4s;
+    }
+    .nav.scrolled {
+      background: rgba(237, 238, 240, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: var(--t-base);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .nav-logo:hover, .nav-logo:focus-visible { opacity: 0.55; }
+    .nav-logo:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.5rem, 3vw, 3rem);
+    }
+    .nav-links a {
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s var(--ease);
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
+    .nav-links a:hover::after, .nav-links a:focus-visible::after { width: 100%; }
+    .nav-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+    .nav-tel {
+      font-size: var(--t-sm);
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .nav-tel:hover, .nav-tel:focus-visible { opacity: 0.65; }
+    .nav-tel:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+
+    /* ================================================================
+       HERO
+       ================================================================ */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: calc(64px + clamp(3rem, 8vw, 6rem)) var(--gap) clamp(4rem, 8vw, 7rem);
+      position: relative;
+      background: var(--bg);
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(237, 238, 240, 0.78);
+      z-index: 1;
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* LA LIGNE QUI SE DESSINE — l'élément signature */
+    .hero-rule {
+      height: 1px;
+      width: 0;
+      background: var(--accent);
+      margin-bottom: 2.2rem;
+    }
+    .hero-rule.go {
+      animation: drawLine 0.85s var(--ease) 0.1s forwards;
+    }
+    @keyframes drawLine {
+      to { width: clamp(80px, 14vw, 150px); }
+    }
+
+    .hero-pretitle {
+      font-family: var(--font-body);
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .hero-pretitle.go {
+      animation: riseIn 0.6s var(--ease) 0.65s forwards;
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      line-height: 0.92;
+      margin-bottom: 1.1em;
+    }
+
+    .hero-maitre {
+      display: block;
+      font-size: var(--t-hero-sm);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--secondary);
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    .hero-maitre.go {
+      animation: riseIn 0.55s var(--ease) 0.85s forwards;
+    }
+
+    /* Nom principal — les lettres se lèvent une par une */
+    .hero-surname {
+      display: block;
+      font-size: var(--t-hero);
+      font-weight: 700;
+      color: var(--ink);
+      overflow: hidden;
+    }
+    .hero-surname .c {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(0.25em);
+      clip-path: inset(0 0 110% 0);
+    }
+    .hero-surname.go .c {
+      animation: liftChar 0.45s var(--ease) forwards;
+    }
+
+    @keyframes liftChar {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0 0 0% 0);
+      }
+    }
+
+    @keyframes riseIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-size: var(--t-xl);
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--ink);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    .hero-tagline.go {
+      animation: riseIn 0.65s var(--ease) 1.65s forwards;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65em;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: var(--t-sm);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1.05rem 2.2rem;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: background 0.22s, transform 0.22s var(--ease);
+    }
+    .hero-cta.go {
+      animation: riseIn 0.55s var(--ease) 1.95s forwards;
+    }
+    .hero-cta::after { content: '→'; transition: transform 0.22s var(--ease); }
+    .hero-cta:hover { background: var(--accent-hover); }
+    .hero-cta:hover::after { transform: translateX(5px); }
+    .hero-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+    /* ================================================================
+       SYSTÈME DE SECTIONS
+       ================================================================ */
+    section:not(.hero) {
+      padding: var(--section) var(--gap);
+    }
+    .section-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* Entête de section : numéro + ligne */
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .sn {       /* section number */
+      font-family: var(--font-body);
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0;
+      flex-shrink: 0;
+    }
+    .sr {       /* section rule */
+      flex: 0 0 clamp(60px, 12vw, 120px);
+      height: 1px;
+      background: var(--rule);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    .section-head.vis .sn {
+      animation: riseIn 0.5s var(--ease) 0.05s forwards;
+    }
+    .section-head.vis .sr {
+      animation: growX 0.6s var(--ease) 0.15s forwards;
+    }
+    @keyframes growX { to { transform: scaleX(1); } }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--t-2xl);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    /* Reveal générique au scroll */
+    .rv {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .rv.vis { opacity: 1; transform: translateY(0); }
+    .rv.d1 { transition-delay: 0.1s; }
+    .rv.d2 { transition-delay: 0.2s; }
+    .rv.d3 { transition-delay: 0.3s; }
+    .rv.d4 { transition-delay: 0.4s; }
+    .rv.d5 { transition-delay: 0.5s; }
+
+    /* ================================================================
+       SECTION 02 — PRÉSENTATION
+       ================================================================ */
+    .about { background: var(--surface); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.55fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    /* Colonne gauche : photo (sticky) */
+    .about-photo-col {
+      position: sticky;
+      top: 5.5rem;
+    }
+
+    .about-photo-frame {
+      aspect-ratio: 3 / 4;
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-photo-frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      z-index: 1;
+    }
+
+    /* Colonne droite : infos + corps */
+    .about-aside {
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .about-name {
+      font-family: var(--font-display);
+      font-size: var(--t-xl);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-meta dt {
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-top: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+    .about-meta dt:first-child { margin-top: 0; }
+    .about-meta dd {
+      font-size: var(--t-sm);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .about-body p {
+      font-size: var(--t-base);
+      line-height: 1.88;
+      color: var(--ink);
+      margin-bottom: 1.6em;
+    }
+    .about-body p:last-child { margin-bottom: 0; }
+
+    .about-quote {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.75rem;
+      margin: 2.8rem 0;
+      font-family: var(--font-display);
+      font-size: var(--t-lg);
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+
+    @media (max-width: 820px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-col {
+        position: static;
+        max-width: 280px;
+      }
+    }
+
+    /* ================================================================
+       SECTION 03 — DOMAINES (fond sombre)
+       ================================================================ */
+    .domains {
+      background: var(--ink);
+    }
+    .domains .section-title { color: #fff; }
+    .domains .sn { color: #8BA8CC; } /* bleu clair sur fond noir */
+    .domains .sr { background: rgba(255,255,255,0.12); }
+
+    .domains-intro {
+      font-size: var(--t-lg);
+      color: rgba(255,255,255,0.55);
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .domains-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    @media (max-width: 900px) {
+      .domains-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .domains-grid { grid-template-columns: 1fr; }
+    }
+
+    .domain-card {
+      padding: clamp(1.8rem, 3.5vw, 2.8rem);
+      background: var(--ink);
+      transition: background 0.25s var(--ease);
+    }
+    .domain-card:hover { background: #1C1C27; }
+
+    .domain-n {
+      font-family: var(--font-body);
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      /* visible sur noir — le bleu prussien tient bien */
+      margin-bottom: 1.1rem;
+    }
+    .domain-card:hover .domain-n { color: #8BA8CC; }
+
+    .domain-title {
+      font-family: var(--font-display);
+      font-size: var(--t-lg);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 0.8rem;
+    }
+
+    .domain-desc {
+      font-size: var(--t-sm);
+      color: rgba(255,255,255,0.48);
+      line-height: 1.72;
+    }
+
+    /* ================================================================
+       SECTION 04 — COMMENT ÇA SE PASSE
+       ================================================================ */
+    .process { background: var(--bg); }
+
+    .process-intro {
+      font-family: var(--font-display);
+      font-size: var(--t-xl);
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--secondary);
+      max-width: 560px;
+      margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    .steps {
+      border-top: 1px solid var(--rule);
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 1.5rem;
+      padding: 2.4rem 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+
+    .step-n {
+      font-family: var(--font-display);
+      font-size: var(--t-2xl);
+      font-weight: 700;
+      color: var(--rule);
+      line-height: 1;
+      padding-top: 0.05em;
+      transition: color 0.2s;
+    }
+    .step:hover .step-n { color: var(--accent); }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: var(--t-lg);
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.55rem;
+      line-height: 1.3;
+    }
+
+    .step-desc {
+      font-size: var(--t-sm);
+      color: var(--secondary);
+      line-height: 1.78;
+    }
+
+    @media (max-width: 480px) {
+      .step { grid-template-columns: 50px 1fr; gap: 1rem; }
+    }
+
+    /* ================================================================
+       SECTION 05 — CONTACT
+       ================================================================ */
+    .contact { background: var(--surface); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: clamp(2.5rem, 6vw, 6rem);
+      margin-top: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 820px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Infos */
+    .contact-heading {
+      font-family: var(--font-display);
+      font-size: var(--t-xl);
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-dl dt {
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-top: 1.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .contact-dl dt:first-child { margin-top: 0; }
+    .contact-dl dd {
+      font-size: var(--t-base);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .contact-dl a {
+      color: var(--accent);
+      transition: opacity 0.2s;
+    }
+    .contact-dl a:hover, .contact-dl a:focus-visible { opacity: 0.65; }
+    .contact-dl a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .btn-call {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65em;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: var(--t-base);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 1.15rem 2rem;
+      margin-top: 2rem;
+      transition: background 0.22s, transform 0.22s var(--ease);
+      width: 100%;
+      text-align: center;
+    }
+    .btn-call:hover { background: var(--accent-hover); transform: translateY(-2px); }
+    .btn-call:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .btn-call:active { transform: translateY(0); }
+
+    /* Formulaire */
+    .form-heading {
+      font-family: var(--font-display);
+      font-size: var(--t-xl);
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-group { margin-bottom: 1.3rem; }
+
+    .form-label {
+      display: block;
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 0.45rem;
+    }
+
+    .form-field {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-radius: 0;
+      padding: 0.9rem 1.05rem;
+      font-family: var(--font-body);
+      font-size: var(--t-sm);
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-field:focus { border-color: var(--accent); }
+    .form-field::placeholder { color: var(--rule); }
+    .form-field.error { border-color: #9B2335; }
+
+    textarea.form-field {
+      resize: vertical;
+      min-height: 130px;
+      line-height: 1.65;
+    }
+
+    .form-notice {
+      font-size: var(--t-xs);
+      color: var(--secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 1.05rem 2rem;
+      font-family: var(--font-body);
+      font-size: var(--t-sm);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.22s, transform 0.2s var(--ease);
+    }
+    .btn-submit:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-submit:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .btn-submit:active { transform: none; }
+
+    .form-success {
+      display: none;
+      padding: 1.5rem;
+      background: var(--accent-light);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: var(--t-sm);
+      line-height: 1.6;
+      text-align: center;
+      font-family: var(--font-body);
+    }
+    .form-success.show { display: block; }
+
+    /* ================================================================
+       FOOTER
+       ================================================================ */
+    .footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.45);
+      padding: clamp(3rem, 6vw, 5rem) var(--gap) clamp(2rem, 4vw, 3rem);
+    }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-name {
+      font-family: var(--font-display);
+      font-size: var(--t-xl);
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .footer-sub {
+      font-size: var(--t-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-top: 0.25rem;
+    }
+    .footer-nav a {
+      font-size: var(--t-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover, .footer-nav a:focus-visible { color: #fff; }
+    .footer-nav a:focus-visible { outline: 1px solid #fff; outline-offset: 3px; }
+
+    .footer-legal p {
+      font-size: var(--t-xs);
+      line-height: 2;
+    }
+    .placeholder {
+      color: rgba(255,255,255,0.2);
+      font-style: italic;
+    }
+    .footer-legal a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover, .footer-legal a:focus-visible { color: rgba(255,255,255,0.7); }
+
+    /* ================================================================
+       PREFERS-REDUCED-MOTION
+       ================================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      /* Tout visible immédiatement */
+      .hero-rule, .hero-pretitle, .hero-maitre,
+      .hero-tagline, .hero-cta { opacity: 1; transform: none; }
+      .hero-rule { width: clamp(80px, 14vw, 150px); }
+      .hero-surname .c { opacity: 1; transform: none; clip-path: none; }
+      .rv { opacity: 1; transform: none; }
+      .sn { opacity: 1; }
+      .sr { transform: scaleX(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#contenu" class="skip-link">Aller au contenu</a>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <a href="#" class="nav-logo" aria-label="Maître Sixtine Rauwel — retour en haut de page">Maître Rauwel</a>
+    <ul class="nav-links" role="list">
+      <li><a href="#presentation">Présentation</a></li>
+      <li><a href="#domaines">Domaines</a></li>
+      <li><a href="#accompagnement">Accompagnement</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:0646093898" class="nav-tel" aria-label="Appeler le 06 46 09 38 98">06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</a>
+  </nav>
+
+  <!-- ============================================================
+       01 · HERO
+  ============================================================ -->
+  <section class="hero" aria-label="Présentation principale" id="contenu">
+    <img class="hero-bg-img" src="photo%20cabinet.webp" alt="" aria-hidden="true">
+    <div class="hero-inner">
+      <!-- L'élément signature : la ligne qui se dessine -->
+      <div class="hero-rule" aria-hidden="true"></div>
+
+      <p class="hero-pretitle">Avocate pénaliste &middot; Barreau de Lille</p>
+
+      <h1 class="hero-name">
+        <span class="hero-maitre">Maître</span>
+        <span class="hero-surname" aria-label="Sixtine Rauwel">Sixtine Rauwel</span>
+      </h1>
+
+      <p class="hero-tagline">
+        Chaque affaire pénale engage votre liberté.<br>
+        Je m'y engage avec vous.
+      </p>
+
+      <a href="#contact" class="hero-cta">Prendre contact</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       02 · PRÉSENTATION
+  ============================================================ -->
+  <section class="about" id="presentation" aria-labelledby="h-presentation">
+    <div class="section-inner">
+      <div class="section-head" aria-hidden="true">
+        <span class="sn">02</span>
+        <span class="sr"></span>
+      </div>
+
+      <h2 class="section-title rv" id="h-presentation">Présentation</h2>
+
+      <div class="about-grid">
+
+        <!-- Colonne gauche : photo (placeholder prêt à recevoir l'image) -->
+        <div class="about-photo-col rv d1">
+          <figure class="about-photo-frame">
+            <img src="photo%20de%20profil.jpeg"
+                 alt="Portrait de Maître Sixtine Rauwel, avocate pénaliste au Barreau de Lille">
+          </figure>
+        </div>
+
+        <!-- Colonne droite : informations + corps de texte -->
+        <div class="rv d2">
+          <aside class="about-aside" aria-label="Informations du cabinet">
+            <div class="about-name">Maître Sixtine Rauwel</div>
+            <dl class="about-meta">
+              <dt>Cabinet</dt>
+              <dd>SELAS Anne Bazela</dd>
+              <dt>Adresse</dt>
+              <dd>3, Place aux Bleuets<br>59000 Lille</dd>
+              <dt>Barreau</dt>
+              <dd>Barreau de Lille</dd>
+              <dt>Assermentation</dt>
+              <dd>19 novembre 2025</dd>
+            </dl>
+          </aside>
+
+          <div class="about-body">
+            <p>Le droit pénal n'est pas une spécialité que l'on choisit par hasard. C'est une discipline qui demande de se tenir du côté de la personne mise en cause — pas contre la justice, mais pour que la justice soit rendue dans le respect des règles qu'elle s'est elle-même fixées.</p>
+
+            <p>J'ai prêté serment le 19 novembre 2025 devant le Barreau de Lille. Ce serment n'est pas une formalité : c'est un engagement public, prononcé à voix haute, devant témoins. Je le prends au sens propre.</p>
+
+            <blockquote class="about-quote">
+              « Je jure, comme avocat, d'exercer mes fonctions avec dignité, conscience, indépendance, probité et humanité. »
+            </blockquote>
+
+            <p>Chaque mot de ce serment a une portée opérationnelle en droit pénal. L'indépendance, c'est ne jamais plier face à la pression du dossier ni à la commodité d'un accord rapide. La conscience, c'est connaître votre situation précisément avant de vous conseiller. L'humanité, c'est ne jamais oublier que derrière chaque procédure, il y a une personne dont la vie se joue.</p>
+
+            <p>J'exerce au sein de la SELAS Anne Bazela, à Lille. Ce cadre me permet d'intervenir dans l'ensemble du ressort du Tribunal judiciaire de Lille, et au-delà lorsque la situation l'exige.</p>
+
+            <p>Que vous soyez mis en cause, convoqué ou victime, ma première obligation est la même : comprendre votre dossier avant de parler. Et, une fois que je parle, chaque mot est pesé.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       03 · DOMAINES D'INTERVENTION
+  ============================================================ -->
+  <section class="domains" id="domaines" aria-labelledby="h-domaines">
+    <div class="section-inner">
+      <div class="section-head" aria-hidden="true">
+        <span class="sn">03</span>
+        <span class="sr"></span>
+      </div>
+
+      <h2 class="section-title rv" id="h-domaines">Domaines d'intervention</h2>
+      <p class="domains-intro rv d1">De la première heure de garde à vue jusqu'à l'arrêt définitif, j'interviens à chaque stade de la procédure pénale.</p>
+
+      <div class="domains-grid" role="list">
+
+        <article class="domain-card rv" role="listitem">
+          <div class="domain-n">01</div>
+          <h3 class="domain-title">Garde à vue</h3>
+          <p class="domain-desc">Assistance dès la convocation ou le placement en garde à vue. Je me déplace rapidement pour être présente lors des auditions et vous conseiller sur vos droits dès les premières heures — qui sont souvent les plus déterminantes pour la suite de la procédure.</p>
+        </article>
+
+        <article class="domain-card rv d1" role="listitem">
+          <div class="domain-n">02</div>
+          <h3 class="domain-title">Instruction judiciaire</h3>
+          <p class="domain-desc">Suivi complet de l'information judiciaire : accès au dossier, demandes d'actes, interrogatoires de première comparution et de mise en examen, contrôle judiciaire, détention provisoire et demandes de mise en liberté.</p>
+        </article>
+
+        <article class="domain-card rv d2" role="listitem">
+          <div class="domain-n">03</div>
+          <h3 class="domain-title">Audience correctionnelle</h3>
+          <p class="domain-desc">Comparution immédiate, citation directe, renvoi correctionnel. Préparation rigoureuse de la défense, présence à l'audience, plaidoirie et suivi du jugement — y compris l'appel si la situation l'impose.</p>
+        </article>
+
+        <article class="domain-card rv" role="listitem">
+          <div class="domain-n">04</div>
+          <h3 class="domain-title">Cour d'assises</h3>
+          <p class="domain-desc">Défense aux assises en première instance et en appel criminel. Ces procédures, qui jugent les crimes, exigent une préparation longue, une capacité à tenir dans la durée et une plaidoirie construite. Je les aborde avec le sérieux qu'elles méritent.</p>
+        </article>
+
+        <article class="domain-card rv d1" role="listitem">
+          <div class="domain-n">05</div>
+          <h3 class="domain-title">Droit pénal des affaires</h3>
+          <p class="domain-desc">Abus de biens sociaux, fraude fiscale, escroquerie, faux et usage de faux, corruption, blanchiment. Défense des personnes physiques et représentation des personnes morales poursuivies pénalement.</p>
+        </article>
+
+        <article class="domain-card rv d2" role="listitem">
+          <div class="domain-n">06</div>
+          <h3 class="domain-title">Victimes — Partie civile</h3>
+          <p class="domain-desc">Se constituer partie civile, c'est faire reconnaître son préjudice dans la procédure pénale. J'accompagne les victimes dans la constitution de leur dossier et la défense de leurs intérêts, de la plainte jusqu'à l'indemnisation.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 · COMMENT ÇA SE PASSE
+  ============================================================ -->
+  <section class="process" id="accompagnement" aria-labelledby="h-accompagnement">
+    <div class="section-inner">
+      <div class="section-head" aria-hidden="true">
+        <span class="sn">04</span>
+        <span class="sr"></span>
+      </div>
+
+      <h2 class="section-title rv" id="h-accompagnement">Comment ça se passe</h2>
+      <p class="process-intro rv d1">Vous ne savez pas forcément ce qu'implique concrètement d'avoir un avocat pénaliste à vos côtés. Voici ce à quoi vous pouvez vous attendre.</p>
+
+      <div class="steps">
+
+        <div class="step rv">
+          <div class="step-n" aria-hidden="true">01</div>
+          <div>
+            <h3 class="step-title">Le premier contact</h3>
+            <p class="step-desc">Vous m'appelez ou m'écrivez pour exposer rapidement votre situation. Je vous dis immédiatement si j'interviens et dans quel délai. Si c'est urgent — garde à vue en cours, convocation dans les 48 heures — je vous indique ce que vous devez faire maintenant, avant même qu'on ait signé quoi que ce soit.</p>
+          </div>
+        </div>
+
+        <div class="step rv d1">
+          <div class="step-n" aria-hidden="true">02</div>
+          <div>
+            <h3 class="step-title">La consultation</h3>
+            <p class="step-desc">Un rendez-vous en cabinet, en personne, pour prendre connaissance complète de votre dossier. Je lis, je pose des questions, j'écoute. À l'issue de cet entretien, vous savez exactement où vous en êtes juridiquement et ce que j'envisage pour vous défendre. Aucune information utile ne vous sera dissimulée par excès de prudence.</p>
+          </div>
+        </div>
+
+        <div class="step rv d2">
+          <div class="step-n" aria-hidden="true">03</div>
+          <div>
+            <h3 class="step-title">La stratégie de défense</h3>
+            <p class="step-desc">Avant chaque acte de procédure, je vous expose la stratégie envisagée et les raisons qui la fondent. Vous n'êtes pas tenu dans l'obscurité de votre propre dossier. Vous validez les choix qui vous appartiennent ; je prends les décisions techniques qui m'appartiennent en tant qu'avocate.</p>
+          </div>
+        </div>
+
+        <div class="step rv d3">
+          <div class="step-n" aria-hidden="true">04</div>
+          <div>
+            <h3 class="step-title">Le suivi</h3>
+            <p class="step-desc">Je vous tiens informé(e) de chaque développement de la procédure. Un acte déposé, une audience fixée, une décision rendue : vous le savez. Je suis joignable et je réponds. Ce n'est pas un luxe — c'est la base d'un travail sérieux.</p>
+          </div>
+        </div>
+
+        <div class="step rv d4">
+          <div class="step-n" aria-hidden="true">05</div>
+          <div>
+            <h3 class="step-title">Les honoraires</h3>
+            <p class="step-desc">Mes honoraires sont fixés et formalisés dans une convention d'honoraires avant toute intervention. Aucune surprise en cours de dossier. Si vous êtes éligible à l'aide juridictionnelle totale ou partielle, nous l'examinons ensemble dès le départ.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       05 · CONTACT
+  ============================================================ -->
+  <section class="contact" id="contact" aria-labelledby="h-contact">
+    <div class="section-inner">
+      <div class="section-head" aria-hidden="true">
+        <span class="sn">05</span>
+        <span class="sr"></span>
+      </div>
+
+      <h2 class="section-title rv" id="h-contact">Prendre contact</h2>
+
+      <div class="contact-grid">
+
+        <!-- Informations -->
+        <div class="rv d1">
+          <p class="contact-heading">Maître Rauwel est disponible pour vous répondre.</p>
+          <dl class="contact-dl">
+            <dt>Téléphone</dt>
+            <dd><a href="tel:0646093898">06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:srauwel.avocat@outlook.fr">srauwel.avocat@outlook.fr</a></dd>
+            <dt>Cabinet</dt>
+            <dd>SELAS Anne Bazela<br>3, Place aux Bleuets<br>59000 Lille</dd>
+            <dt>Barreau</dt>
+            <dd>Barreau de Lille</dd>
+          </dl>
+          <a href="tel:0646093898" class="btn-call" aria-label="Appeler Maître Rauwel au 06 46 09 38 98">
+            Appeler maintenant — 06&nbsp;46&nbsp;09&nbsp;38&nbsp;98
+          </a>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="rv d2">
+          <h3 class="form-heading">Envoyer un message</h3>
+
+          <form id="contact-form" novalidate aria-label="Formulaire de contact">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nom" class="form-label">Nom <span aria-hidden="true">*</span></label>
+                <input type="text" id="nom" name="nom" class="form-field" required autocomplete="family-name" aria-required="true">
+              </div>
+              <div class="form-group">
+                <label for="prenom" class="form-label">Prénom <span aria-hidden="true">*</span></label>
+                <input type="text" id="prenom" name="prenom" class="form-field" required autocomplete="given-name" aria-required="true">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="telephone" class="form-label">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" class="form-field" autocomplete="tel">
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" class="form-field" required autocomplete="email" aria-required="true">
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Votre situation, en quelques mots <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" class="form-field" required aria-required="true" placeholder="Décrivez brièvement votre situation. Ces informations sont couvertes par le secret professionnel dès réception."></textarea>
+            </div>
+
+            <p class="form-notice">
+              Les informations transmises via ce formulaire sont couvertes par le secret professionnel de l'avocat dès réception. Maître Rauwel vous répondra dans les meilleurs délais — en priorité si votre situation est urgente.
+            </p>
+
+            <button type="submit" class="btn-submit">Envoyer le message</button>
+          </form>
+
+          <div class="form-success" id="form-success" role="status" aria-live="polite" tabindex="-1">
+            Votre message a bien été reçu. Maître Rauwel vous recontactera dans les meilleurs délais.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <div class="footer-top">
+        <div>
+          <div class="footer-name">Maître Sixtine Rauwel</div>
+          <div class="footer-sub">Avocate pénaliste &middot; Barreau de Lille</div>
+        </div>
+        <nav class="footer-nav" aria-label="Liens de navigation secondaire">
+          <a href="#presentation">Présentation</a>
+          <a href="#domaines">Domaines</a>
+          <a href="#accompagnement">Accompagnement</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-legal">
+        <p>Cabinet Sixtine Rauwel · SELAS Anne Bazela · 3, Place aux Bleuets, 59000 Lille</p>
+        <p>Membre du Barreau de Lille · Assurance RC Professionnelle&nbsp;: <span class="placeholder">[À COMPLÉTER — assureur et n° de police]</span></p>
+        <p>SIRET&nbsp;: <span class="placeholder">[À COMPLÉTER]</span> &middot; N° TVA intracommunautaire&nbsp;: <span class="placeholder">[À COMPLÉTER]</span></p>
+        <p>Règlement intérieur national de la profession d'avocat disponible sur le site du <a href="https://www.barreau-de-lille.fr" target="_blank" rel="noopener noreferrer">Barreau de Lille</a>.</p>
+        <p style="margin-top: 1rem;">
+          &copy; <span id="yr">2025</span> Maître Sixtine Rauwel. Tous droits réservés.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+  (function () {
+    'use strict';
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ── HERO ANIMATION ────────────────────────────────────────── */
+    function splitAndAnimate() {
+      const el = document.querySelector('.hero-surname');
+      if (!el) return;
+
+      const text = el.textContent.trim();
+      el.setAttribute('aria-label', text);
+      el.innerHTML = '';
+
+      text.split('').forEach((char, i) => {
+        const s = document.createElement('span');
+        s.className = 'c';
+        s.setAttribute('aria-hidden', 'true');
+        s.textContent = char === ' ' ? ' ' : char;
+        s.style.animationDelay = (1.1 + i * 0.045) + 's';
+        el.appendChild(s);
+      });
+    }
+
+    function launchHero() {
+      if (reduced) {
+        /* Tout visible immédiatement, pas d'animation */
+        document.querySelectorAll(
+          '.hero-rule, .hero-pretitle, .hero-maitre, .hero-tagline, .hero-cta'
+        ).forEach(function (el) {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
+        var rule = document.querySelector('.hero-rule');
+        if (rule) rule.style.width = 'clamp(80px, 14vw, 150px)';
+        var surname = document.querySelector('.hero-surname');
+        if (surname) {
+          surname.querySelectorAll('.c').forEach(function (c) {
+            c.style.opacity = '1';
+            c.style.transform = 'none';
+            c.style.clipPath = 'none';
+          });
+        }
+        return;
+      }
+
+      var els = ['.hero-rule', '.hero-pretitle', '.hero-maitre', '.hero-surname', '.hero-tagline', '.hero-cta'];
+      els.forEach(function (sel) {
+        var el = document.querySelector(sel);
+        if (el) el.classList.add('go');
+      });
+    }
+
+    splitAndAnimate();
+
+    if (document.readyState === 'complete') {
+      setTimeout(launchHero, 80);
+    } else {
+      window.addEventListener('load', function () { setTimeout(launchHero, 80); });
+    }
+
+    /* ── NAV SCROLLED STATE ────────────────────────────────────── */
+    var nav = document.querySelector('.nav');
+    function onScroll() {
+      if (nav) {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* ── SCROLL REVEALS ────────────────────────────────────────── */
+    if (!reduced) {
+      /* Section headers */
+      var headObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('vis');
+            headObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      document.querySelectorAll('.section-head').forEach(function (el) {
+        headObs.observe(el);
+      });
+
+      /* Generic reveals */
+      var rvObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('vis');
+            rvObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+      document.querySelectorAll('.rv').forEach(function (el) {
+        rvObs.observe(el);
+      });
+    } else {
+      /* Reduced motion : tout visible dès le départ */
+      document.querySelectorAll('.rv, .section-head').forEach(function (el) {
+        el.classList.add('vis');
+      });
+    }
+
+    /* ── CONTACT FORM ──────────────────────────────────────────── */
+    var form = document.getElementById('contact-form');
+    var successBox = document.getElementById('form-success');
+
+    if (form && successBox) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var valid = true;
+
+        /* Réinitialiser l'état d'erreur */
+        form.querySelectorAll('.form-field').forEach(function (f) {
+          f.classList.remove('error');
+        });
+
+        /* Champs obligatoires */
+        form.querySelectorAll('[required]').forEach(function (f) {
+          if (!f.value.trim()) {
+            f.classList.add('error');
+            valid = false;
+          }
+        });
+
+        /* Format email */
+        var emailField = form.querySelector('#email');
+        if (emailField && emailField.value &&
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+          emailField.classList.add('error');
+          valid = false;
+        }
+
+        if (!valid) {
+          var first = form.querySelector('.error');
+          if (first) first.focus();
+          return;
+        }
+
+        /*
+         * TODO PRODUCTION : envoyer les données au backend ici.
+         * Exemple :
+         * fetch('/api/contact', { method: 'POST', body: new FormData(form) })
+         *   .then(r => r.ok ? showSuccess() : alert('Erreur — réessayez.'))
+         *   .catch(() => alert('Erreur réseau.'));
+         */
+        showSuccess();
+      });
+
+      function showSuccess() {
+        form.style.display = 'none';
+        successBox.classList.add('show');
+        successBox.focus();
+      }
+
+      /* Effacer l'état d'erreur à la saisie */
+      form.querySelectorAll('.form-field').forEach(function (f) {
+        f.addEventListener('input', function () {
+          f.classList.remove('error');
+        });
+      });
+    }
+
+    /* ── ANNÉE AUTO ────────────────────────────────────────────── */
+    var yr = document.getElementById('yr');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+  }());
+  </script>
+
+</body>
+</html>
