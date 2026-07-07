@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.sixtinerauwelavocat.fr/politique-confidentialite.html">
+  <title>Politique de confidentialité — Sixtine Rauwel, Avocat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#EDEEF0;--surface:#F5F5F7;--ink:#12121A;--secondary:#64646E;--rule:#C8C9D1;--accent:#2B3E58;--accent-light:#E6ECF3;--font-display:'Spectral',Georgia,serif;--font-body:'Jost',system-ui,sans-serif;--t-xs:clamp(0.7rem,1.4vw,0.8rem);--t-sm:clamp(0.85rem,1.7vw,0.95rem);--t-base:clamp(1rem,1.9vw,1.1rem);--t-lg:clamp(1.1rem,2.4vw,1.35rem);--t-xl:clamp(1.3rem,3vw,1.65rem);--t-2xl:clamp(1.6rem,3.5vw,2.2rem);--gap:clamp(1.2rem,5vw,4rem);--section:clamp(3.5rem,10vw,9rem);--ease:cubic-bezier(0.22,1,0.36,1);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+    ul{list-style:none;}
+    .nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 var(--gap);height:64px;transition:background 0.4s var(--ease),border-bottom 0.4s;}
+    .nav.scrolled{background:rgba(237,238,240,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);}
+    .nav-logo{font-family:var(--font-display);font-size:var(--t-base);font-weight:600;letter-spacing:0.02em;white-space:nowrap;transition:opacity 0.2s;}
+    .nav-logo:hover{opacity:0.55;}
+    .nav-hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0.6rem;flex-shrink:0;color:var(--ink);}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:currentColor;transition:transform 0.3s var(--ease),opacity 0.3s var(--ease);transform-origin:center;}
+    .nav.open .nav-hamburger span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .nav.open .nav-hamburger span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .nav.open .nav-hamburger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .nav-links{position:fixed;top:64px;left:0;right:0;display:flex;flex-direction:column;align-items:stretch;gap:0;background:rgba(237,238,240,0.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);padding:0.5rem var(--gap) 1.5rem;transform:translateY(-10px);opacity:0;visibility:hidden;transition:transform 0.3s var(--ease),opacity 0.3s var(--ease),visibility 0.3s;z-index:99;}
+    .nav.open .nav-links{transform:translateY(0);opacity:1;visibility:visible;}
+    .nav-links li{border-bottom:1px solid var(--rule);}
+    .nav-links li:last-child{border-bottom:none;}
+    .nav-links a{display:block;padding:1rem 0;font-size:var(--t-sm);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);transition:color 0.2s;}
+    .nav-links a:hover{color:var(--accent);}
+    .nav-tel{display:none;font-size:var(--t-sm);font-weight:500;color:var(--accent);letter-spacing:0.04em;white-space:nowrap;transition:opacity 0.2s;}
+    .nav-menu-tel a{color:var(--accent)!important;font-weight:600!important;}
+    @media(min-width:769px){
+      .nav-hamburger{display:none;}.nav-tel{display:block;}.nav-menu-tel{display:none;}
+      .nav-links{position:static;flex-direction:row;align-items:center;gap:clamp(1.5rem,3vw,3rem);background:none;backdrop-filter:none;border:none;padding:0;transform:none;opacity:1;visibility:visible;transition:none;z-index:auto;}
+      .nav-links li{border:none;}
+      .nav-links a{display:inline;padding:0;font-size:var(--t-xs);letter-spacing:0.14em;color:var(--secondary);position:relative;}
+      .nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--accent);transition:width 0.3s var(--ease);}
+      .nav-links a:hover{color:var(--ink);}
+      .nav-links a:hover::after{width:100%;}
+    }
+    .page-header{padding:calc(64px + 3.5rem) var(--gap) 3rem;background:var(--bg);border-bottom:1px solid var(--rule);}
+    .page-header-inner{max-width:860px;margin:0 auto;}
+    .page-breadcrumb{font-size:var(--t-xs);font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--secondary);margin-bottom:1.1rem;}
+    .page-rule{height:1px;width:80px;background:var(--accent);margin-bottom:1.8rem;}
+    .page-title{font-family:var(--font-display);font-size:var(--t-2xl);font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:0.5rem;}
+    .page-date{font-size:var(--t-xs);color:var(--secondary);letter-spacing:0.1em;}
+    .legal-body{padding:var(--section) var(--gap);}
+    .legal-inner{max-width:860px;margin:0 auto;}
+    .legal-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--rule);}
+    .legal-section:last-child{border-bottom:none;margin-bottom:0;}
+    .legal-section h2{font-family:var(--font-display);font-size:var(--t-xl);font-weight:600;color:var(--ink);margin-bottom:1.2rem;line-height:1.2;}
+    .legal-section h3{font-family:var(--font-display);font-size:var(--t-lg);font-weight:600;color:var(--ink);margin:1.5rem 0 0.7rem;}
+    .legal-section p{font-size:var(--t-base);line-height:1.85;color:var(--ink);margin-bottom:1em;}
+    .legal-section p:last-child{margin-bottom:0;}
+    .legal-section ul{margin:0.75rem 0 1em 1.5rem;list-style:disc;}
+    .legal-section ul li{font-size:var(--t-base);line-height:1.7;color:var(--ink);margin-bottom:0.4em;}
+    .legal-section a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;}
+    .data-table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:var(--t-sm);}
+    .data-table th{text-align:left;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;font-size:var(--t-xs);color:var(--secondary);padding:0.7rem 1rem;border-bottom:2px solid var(--rule);white-space:nowrap;}
+    .data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink);line-height:1.6;}
+    .data-table tbody tr:last-child td{border-bottom:none;}
+    .rgpd-highlight{background:var(--accent-light);border-left:2px solid var(--accent);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:var(--t-sm);line-height:1.75;color:var(--ink);}
+    .footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:clamp(3rem,6vw,5rem) var(--gap) clamp(2rem,4vw,3rem);}
+    .footer-inner{max-width:1280px;margin:0 auto;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;padding-bottom:2rem;margin-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.07);}
+    .footer-name{font-family:var(--font-display);font-size:var(--t-xl);font-weight:600;color:#fff;margin-bottom:0.4rem;}
+    .footer-sub{font-size:var(--t-xs);letter-spacing:0.12em;text-transform:uppercase;}
+    .footer-nav{display:flex;gap:1.5rem 2rem;flex-wrap:wrap;align-items:flex-start;margin-top:0.25rem;}
+    .footer-nav a{font-size:var(--t-xs);letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
+    .footer-nav a:hover{color:#fff;}
+    .footer-legal p{font-size:var(--t-xs);line-height:2;}
+    .footer-legal a{color:rgba(255,255,255,0.35);text-decoration:underline;text-underline-offset:2px;transition:color 0.2s;}
+    .footer-legal a:hover{color:rgba(255,255,255,0.7);}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo">Sixtine Rauwel</a>
+    <ul class="nav-links" id="nav-menu" role="list">
+      <li><a href="index.html#presentation">Présentation</a></li>
+      <li><a href="index.html#domaines">Domaines</a></li>
+      <li><a href="index.html#honoraires">Honoraires</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="nav-menu-tel"><a href="tel:0646093898">06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</a></li>
+    </ul>
+    <a href="tel:0646093898" class="nav-tel">06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</a>
+    <button class="nav-hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-inner">
+      <div class="page-breadcrumb"><a href="index.html">Accueil</a> — Politique de confidentialité</div>
+      <div class="page-rule"></div>
+      <h1 class="page-title">Politique de confidentialité</h1>
+      <p class="page-date">Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi Informatique et Libertés</p>
+    </div>
+  </header>
+
+  <main class="legal-body" id="contenu">
+    <div class="legal-inner">
+
+      <div class="legal-section">
+        <h2>1. Responsable du traitement</h2>
+        <p><strong>Sixtine Rauwel — Avocat</strong><br>
+        Avocat inscrite au Barreau de Lille<br>
+        Email&nbsp;: <a href="mailto:srauwel.avocat@outlook.fr">srauwel.avocat@outlook.fr</a><br>
+        Téléphone&nbsp;: 06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>2. Données collectées et finalités</h2>
+        <p>Ce site collecte uniquement les données strictement nécessaires au traitement de votre demande de contact. Aucun cookie de traçage, aucune donnée de navigation à des fins publicitaires ou statistiques n'est collectée.</p>
+
+        <div style="overflow-x:auto;">
+          <table class="data-table" aria-label="Tableau des traitements de données">
+            <thead>
+              <tr>
+                <th>Donnée</th>
+                <th>Finalité</th>
+                <th>Base légale</th>
+                <th>Durée de conservation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nom, prénom</td>
+                <td>Identification pour répondre à votre demande</td>
+                <td>Intérêt légitime (art. 6.1.f RGPD)</td>
+                <td>3 ans à compter du dernier contact</td>
+              </tr>
+              <tr>
+                <td>Adresse email</td>
+                <td>Réponse à votre demande de contact</td>
+                <td>Intérêt légitime</td>
+                <td>3 ans à compter du dernier contact</td>
+              </tr>
+              <tr>
+                <td>Numéro de téléphone</td>
+                <td>Prise de contact téléphonique si vous le souhaitez (facultatif)</td>
+                <td>Consentement (champ facultatif)</td>
+                <td>3 ans à compter du dernier contact</td>
+              </tr>
+              <tr>
+                <td>Contenu du message</td>
+                <td>Traitement de votre demande juridique</td>
+                <td>Intérêt légitime / exécution d'un contrat</td>
+                <td>Durée de la relation client + 5 ans (prescription civile)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rgpd-highlight">
+          <strong>Secret professionnel de l'avocat :</strong> Les informations que vous transmettez à un avocat dans le cadre d'une relation professionnelle sont couvertes par le secret professionnel (art. 66-5 de la loi du 31 décembre 1971). Ce secret est absolu, général et illimité dans le temps. Il s'applique dès la réception de votre message via ce formulaire.
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <h2>3. Destinataires des données</h2>
+        <p>Vos données personnelles ne sont ni vendues, ni cédées, ni louées à des tiers. Elles peuvent être transmises à des sous-traitants techniques (hébergeur du site, prestataire de messagerie) dans le strict cadre de l'exécution de leurs prestations, lesquels sont soumis à des obligations de confidentialité.</p>
+        <p>Aucun transfert de données hors de l'Union européenne n'est effectué.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>4. Vos droits</h2>
+        <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits suivants sur vos données personnelles&nbsp;:</p>
+        <ul>
+          <li><strong>Droit d'accès</strong> — obtenir la confirmation que des données vous concernant sont traitées et en obtenir une copie ;</li>
+          <li><strong>Droit de rectification</strong> — faire corriger des données inexactes ou incomplètes ;</li>
+          <li><strong>Droit à l'effacement</strong> — demander la suppression de vos données, dans les limites des obligations légales de conservation ;</li>
+          <li><strong>Droit à la limitation</strong> — demander le gel temporaire du traitement de vos données ;</li>
+          <li><strong>Droit d'opposition</strong> — vous opposer au traitement de vos données fondé sur l'intérêt légitime ;</li>
+          <li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré et lisible par machine.</li>
+        </ul>
+        <p>Pour exercer ces droits, adressez votre demande par email à <a href="mailto:srauwel.avocat@outlook.fr">srauwel.avocat@outlook.fr</a> en précisant votre identité. Une réponse vous sera adressée dans un délai d'un mois.</p>
+        <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong>&nbsp;: <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a> ou par courrier au 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>5. Cookies et traceurs</h2>
+        <p>Ce site n'utilise pas de cookies à des fins publicitaires ou statistiques. Aucun traceur de navigation n'est déposé sur votre terminal.</p>
+        <p>Des cookies strictement nécessaires au fonctionnement du site peuvent être utilisés (par exemple, pour mémoriser votre consentement). Ces cookies ne requièrent pas votre accord préalable.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>6. Sécurité des données</h2>
+        <p>Des mesures techniques et organisationnelles appropriées sont mises en place pour protéger vos données contre toute perte, destruction accidentelle, altération ou accès non autorisé. Le site est accessible en HTTPS (chiffrement des échanges).</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>7. Mise à jour de cette politique</h2>
+        <p>Cette politique de confidentialité peut être modifiée à tout moment pour refléter les évolutions légales ou les pratiques du site. La version applicable est celle en ligne à la date de votre visite.<br>
+        Dernière mise à jour&nbsp;: <span style="background:var(--accent-light);color:var(--accent);padding:0.1em 0.4em;font-style:italic;border-radius:2px;">[À COMPLÉTER — date de mise en ligne]</span></p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-name">Sixtine Rauwel — Avocat</div>
+          <div class="footer-sub">Droit pénal &middot; Droit de la famille &middot; Barreau de Lille</div>
+        </div>
+        <nav class="footer-nav" aria-label="Navigation secondaire">
+          <a href="index.html">Accueil</a>
+          <a href="droit-penal.html">Droit pénal</a>
+          <a href="droit-famille.html">Droit de la famille</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+        </nav>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; <span id="yr">2026</span> Sixtine Rauwel. Tous droits réservés. &nbsp;·&nbsp; <a href="mentions-legales.html">Mentions légales</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var nav=document.querySelector('.nav'),hamburger=document.querySelector('.nav-hamburger'),navMenu=document.getElementById('nav-menu');
+    function onScroll(){ if(nav) nav.classList.toggle('scrolled',window.scrollY>50); }
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+    if(hamburger&&nav){
+      function closeNav(){ nav.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); }
+      hamburger.addEventListener('click',function(e){ e.stopPropagation(); var o=nav.classList.toggle('open'); hamburger.setAttribute('aria-expanded',o?'true':'false'); });
+      if(navMenu) navMenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeNav); });
+      document.addEventListener('click',function(e){ if(nav.classList.contains('open')&&!nav.contains(e.target)) closeNav(); });
+      window.addEventListener('keydown',function(e){ if(e.key==='Escape') closeNav(); });
+    }
+    var yr=document.getElementById('yr'); if(yr) yr.textContent=new Date().getFullYear();
+  }());
+  </script>
+</body>
+</html>

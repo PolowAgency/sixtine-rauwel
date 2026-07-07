@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sixtine Rauwel, avocat au Barreau de Lille — droit de la famille : divorce, autorité parentale, garde d'enfants, prestation compensatoire, protection des majeurs, violences intrafamiliales.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.sixtinerauwelavocat.fr/droit-famille.html">
+  <title>Droit de la famille — Sixtine Rauwel, Avocat | Barreau de Lille</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#EDEEF0; --surface:#F5F5F7; --ink:#12121A; --secondary:#64646E; --rule:#C8C9D1;
+      --accent:#2B3E58; --accent-hover:#1E2E44; --accent-light:#E6ECF3;
+      --font-display:'Spectral',Georgia,serif; --font-body:'Jost',system-ui,sans-serif;
+      --t-xs:clamp(0.7rem,1.4vw,0.8rem); --t-sm:clamp(0.85rem,1.7vw,0.95rem);
+      --t-base:clamp(1rem,1.9vw,1.1rem); --t-lg:clamp(1.1rem,2.4vw,1.35rem);
+      --t-xl:clamp(1.3rem,3vw,1.65rem); --t-2xl:clamp(1.6rem,3.5vw,2.2rem);
+      --gap:clamp(1.2rem,5vw,4rem); --section:clamp(3.5rem,10vw,9rem);
+      --ease:cubic-bezier(0.22,1,0.36,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+    ul{list-style:none;}
+
+    .nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 var(--gap);height:64px;transition:background 0.4s var(--ease),border-bottom 0.4s;}
+    .nav.scrolled{background:rgba(237,238,240,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);}
+    .nav-logo{font-family:var(--font-display);font-size:var(--t-base);font-weight:600;letter-spacing:0.02em;white-space:nowrap;transition:opacity 0.2s;}
+    .nav-logo:hover{opacity:0.55;}
+    .nav-hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0.6rem;flex-shrink:0;color:var(--ink);}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:currentColor;transition:transform 0.3s var(--ease),opacity 0.3s var(--ease);transform-origin:center;}
+    .nav.open .nav-hamburger span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .nav.open .nav-hamburger span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .nav.open .nav-hamburger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .nav-links{position:fixed;top:64px;left:0;right:0;display:flex;flex-direction:column;align-items:stretch;gap:0;background:rgba(237,238,240,0.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);padding:0.5rem var(--gap) 1.5rem;transform:translateY(-10px);opacity:0;visibility:hidden;transition:transform 0.3s var(--ease),opacity 0.3s var(--ease),visibility 0.3s;z-index:99;}
+    .nav.open .nav-links{transform:translateY(0);opacity:1;visibility:visible;}
+    .nav-links li{border-bottom:1px solid var(--rule);}
+    .nav-links li:last-child{border-bottom:none;}
+    .nav-links a{display:block;padding:1rem 0;font-size:var(--t-sm);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);transition:color 0.2s;}
+    .nav-links a:hover{color:var(--accent);}
+    .nav-tel{display:none;font-size:var(--t-sm);font-weight:500;color:var(--accent);letter-spacing:0.04em;white-space:nowrap;transition:opacity 0.2s;}
+    .nav-tel:hover{opacity:0.65;}
+    .nav-menu-tel a{color:var(--accent)!important;font-weight:600!important;}
+    @media(min-width:769px){
+      .nav-hamburger{display:none;} .nav-tel{display:block;} .nav-menu-tel{display:none;}
+      .nav-links{position:static;flex-direction:row;align-items:center;gap:clamp(1.5rem,3vw,3rem);background:none;backdrop-filter:none;border:none;padding:0;transform:none;opacity:1;visibility:visible;transition:none;z-index:auto;}
+      .nav-links li{border:none;}
+      .nav-links a{display:inline;padding:0;font-size:var(--t-xs);letter-spacing:0.14em;color:var(--secondary);position:relative;}
+      .nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--accent);transition:width 0.3s var(--ease);}
+      .nav-links a:hover{color:var(--ink);}
+      .nav-links a:hover::after{width:100%;}
+    }
+
+    .page-header{padding:calc(64px + 3.5rem) var(--gap) 3rem;background:var(--bg);border-bottom:1px solid var(--rule);}
+    .page-header-inner{max-width:1280px;margin:0 auto;}
+    .page-breadcrumb{font-size:var(--t-xs);font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--secondary);margin-bottom:1.1rem;}
+    .page-breadcrumb a:hover{color:var(--accent);}
+    .page-breadcrumb span{color:var(--rule);margin:0 0.5em;}
+    .page-rule{height:1px;width:80px;background:var(--accent);margin-bottom:1.8rem;}
+    .page-title{font-family:var(--font-display);font-size:var(--t-2xl);font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:1rem;}
+    .page-subtitle{font-family:var(--font-display);font-size:var(--t-lg);font-weight:400;font-style:italic;color:var(--secondary);max-width:640px;line-height:1.5;}
+
+    .page-section{padding:var(--section) var(--gap);}
+    .page-section--alt{background:var(--surface);padding:var(--section) var(--gap);}
+    .page-section--dark{background:var(--ink);padding:var(--section) var(--gap);}
+    .section-inner{max-width:1280px;margin:0 auto;}
+    .section-label{font-size:var(--t-xs);font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:0.7rem;display:flex;align-items:center;gap:1rem;}
+    .section-label::after{content:'';flex:0 0 60px;height:1px;background:var(--rule);}
+    .section-heading{font-family:var(--font-display);font-size:var(--t-2xl);font-weight:600;color:var(--ink);margin-bottom:clamp(1.5rem,4vw,2.5rem);line-height:1.15;}
+    .section-heading--light{color:#fff;}
+    .prose p{font-size:var(--t-base);line-height:1.88;color:var(--ink);margin-bottom:1.5em;}
+    .prose p:last-child{margin-bottom:0;}
+
+    .cards-grid{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.07);}
+    @media(min-width:560px){.cards-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(min-width:900px){.cards-grid{grid-template-columns:repeat(3,1fr);}}
+    .card{padding:clamp(1.5rem,3vw,2.5rem);background:var(--ink);}
+    .card-n{font-size:var(--t-xs);font-weight:500;letter-spacing:0.22em;color:var(--accent);margin-bottom:0.8rem;}
+    .card-title{font-family:var(--font-display);font-size:var(--t-lg);font-weight:600;color:#fff;line-height:1.25;margin-bottom:0.7rem;}
+    .card-desc{font-size:var(--t-sm);color:rgba(255,255,255,0.5);line-height:1.72;}
+
+    .steps{border-top:1px solid var(--rule);}
+    .step{display:grid;grid-template-columns:48px 1fr;gap:1rem;padding:2rem 0;border-bottom:1px solid var(--rule);align-items:start;}
+    @media(min-width:480px){.step{grid-template-columns:72px 1fr;gap:1.5rem;padding:2.4rem 0;}}
+    .step-n{font-family:var(--font-display);font-size:var(--t-2xl);font-weight:700;color:var(--rule);line-height:1;padding-top:0.05em;}
+    .step-title{font-family:var(--font-display);font-size:var(--t-lg);font-weight:600;color:var(--ink);margin-bottom:0.5rem;line-height:1.3;}
+    .step-desc{font-size:var(--t-sm);color:var(--secondary);line-height:1.78;}
+
+    .cta-band{background:var(--accent);padding:clamp(3rem,6vw,5rem) var(--gap);text-align:center;}
+    .cta-band-title{font-family:var(--font-display);font-size:var(--t-xl);font-weight:600;color:#fff;margin-bottom:0.5rem;}
+    .cta-band-sub{font-size:var(--t-sm);color:rgba(255,255,255,0.7);margin-bottom:2rem;}
+    .cta-btn{display:inline-flex;align-items:center;gap:0.6em;background:#fff;color:var(--accent);font-family:var(--font-body);font-size:var(--t-sm);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:1.05rem 2.2rem;transition:background 0.2s;}
+    .cta-btn:hover{background:var(--bg);}
+    .cta-btn::after{content:'→';}
+
+    .footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:clamp(3rem,6vw,5rem) var(--gap) clamp(2rem,4vw,3rem);}
+    .footer-inner{max-width:1280px;margin:0 auto;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;padding-bottom:2rem;margin-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.07);}
+    .footer-name{font-family:var(--font-display);font-size:var(--t-xl);font-weight:600;color:#fff;margin-bottom:0.4rem;}
+    .footer-sub{font-size:var(--t-xs);letter-spacing:0.12em;text-transform:uppercase;}
+    .footer-nav{display:flex;gap:1.5rem 2rem;flex-wrap:wrap;align-items:flex-start;margin-top:0.25rem;}
+    .footer-nav a{font-size:var(--t-xs);letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
+    .footer-nav a:hover{color:#fff;}
+    .footer-legal p{font-size:var(--t-xs);line-height:2;}
+    .footer-legal a{color:rgba(255,255,255,0.35);text-decoration:underline;text-underline-offset:2px;transition:color 0.2s;}
+    .footer-legal a:hover{color:rgba(255,255,255,0.7);}
+    .placeholder{color:rgba(255,255,255,0.2);font-style:italic;}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo">Sixtine Rauwel</a>
+    <ul class="nav-links" id="nav-menu" role="list">
+      <li><a href="index.html#presentation">Présentation</a></li>
+      <li><a href="index.html#domaines">Domaines</a></li>
+      <li><a href="index.html#accompagnement">Accompagnement</a></li>
+      <li><a href="index.html#honoraires">Honoraires</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="nav-menu-tel"><a href="tel:0646093898">06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</a></li>
+    </ul>
+    <a href="tel:0646093898" class="nav-tel">06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</a>
+    <button class="nav-hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-inner">
+      <div class="page-breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span>—</span>
+        Domaines d'intervention
+        <span>—</span>
+        Droit de la famille
+      </div>
+      <div class="page-rule"></div>
+      <h1 class="page-title">Droit de la famille</h1>
+      <p class="page-subtitle">Accompagnement dans les situations familiales conflictuelles ou amiables : divorce, autorité parentale, protection des personnes vulnérables.</p>
+    </div>
+  </header>
+
+  <!-- 01 · PRÉSENTATION -->
+  <section class="page-section" aria-labelledby="h-presentation">
+    <div class="section-inner">
+      <div class="section-label">01 — Présentation</div>
+      <h2 class="section-heading" id="h-presentation">Le droit de la famille, au cœur de la vie</h2>
+      <div class="prose" style="max-width:720px;">
+        <p>Le droit de la famille régit les relations entre les membres d'une famille et les obligations qui en découlent. Il intervient à des moments souvent difficiles : séparation, divorce, conflits autour des enfants, protection d'un proche vulnérable.</p>
+        <p>J'interviens aussi bien dans le cadre de procédures amiables — lorsque les parties parviennent à s'accorder — que dans les litiges contentieux, devant le juge aux affaires familiales ou le tribunal judiciaire.</p>
+        <p>Le droit de la famille exige une double compétence : une maîtrise technique des procédures et une capacité d'écoute réelle. Derrière chaque dossier, il y a des personnes fragilisées par une situation qu'elles n'ont pas toujours choisie. Je travaille à construire des solutions durables et à préserver autant que possible les équilibres — notamment lorsque des enfants sont concernés.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · TYPES DE DOSSIERS -->
+  <section class="page-section--dark" aria-labelledby="h-dossiers">
+    <div class="section-inner">
+      <div class="section-label" style="color:#8BA8CC;">
+        <span>02 — Types de dossiers</span>
+        <span style="flex:0 0 60px;height:1px;background:rgba(255,255,255,0.12);display:block;"></span>
+      </div>
+      <h2 class="section-heading section-heading--light" id="h-dossiers">Dossiers traités</h2>
+
+      <div class="cards-grid" role="list">
+        <article class="card" role="listitem">
+          <div class="card-n">01</div>
+          <h3 class="card-title">Divorce</h3>
+          <p class="card-desc">Divorce par consentement mutuel (sans juge ou judiciaire), divorce pour faute, divorce pour altération définitive du lien conjugal. Négociation des conditions de la séparation, partage des biens, prestation compensatoire.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="card-n">02</div>
+          <h3 class="card-title">Autorité parentale et résidence</h3>
+          <p class="card-desc">Conflits relatifs à l'exercice de l'autorité parentale, fixation de la résidence de l'enfant (résidence principale, résidence alternée), modification des mesures existantes, droit de visite et d'hébergement.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="card-n">03</div>
+          <h3 class="card-title">Pension alimentaire</h3>
+          <p class="card-desc">Fixation, révision ou suppression de la pension alimentaire pour les enfants ou pour l'un des ex-époux. Calcul selon les ressources et les besoins, recouvrement des sommes impayées.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="card-n">04</div>
+          <h3 class="card-title">Violences intrafamiliales</h3>
+          <p class="card-desc">Assistance aux victimes de violences conjugales ou familiales : dépôt de plainte, ordonnance de protection, éviction du conjoint violent, accompagnement tout au long de la procédure pénale et civile.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="card-n">05</div>
+          <h3 class="card-title">Protection des majeurs</h3>
+          <p class="card-desc">Mise sous tutelle ou curatelle, sauvegarde de justice. Assistance à la personne protégée ou à ses proches dans les démarches judiciaires devant le juge des tutelles.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="card-n">06</div>
+          <h3 class="card-title">Filiation et état civil</h3>
+          <p class="card-desc">Reconnaissance, contestation ou établissement de la filiation. Adoption simple ou plénière. Rectification d'état civil. Actions en recherche de paternité ou maternité.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · PROCÉDURE TYPE : DIVORCE CONTENTIEUX -->
+  <section class="page-section--alt" aria-labelledby="h-procedure">
+    <div class="section-inner">
+      <div class="section-label">03 — Déroulé type</div>
+      <h2 class="section-heading" id="h-procedure">Exemple : procédure de divorce contentieux</h2>
+      <p style="font-family:var(--font-display);font-size:var(--t-lg);color:var(--secondary);max-width:560px;margin-bottom:clamp(2rem,5vw,3.5rem);line-height:1.5;">Chaque dossier est unique. Le déroulé ci-dessous illustre les grandes étapes d'un divorce contentieux devant le juge aux affaires familiales.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">01</div>
+          <div>
+            <h3 class="step-title">Consultation et évaluation</h3>
+            <p class="step-desc">Analyse complète de la situation familiale, patrimoniale et humaine. Identification des enjeux prioritaires (enfants, logement, revenus). Présentation des options et de leurs conséquences pratiques.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <div>
+            <h3 class="step-title">Tentative de règlement amiable</h3>
+            <p class="step-desc">Lorsqu'un accord partiel est possible, je travaille à des solutions négociées sur les points non contestés. Cela permet de raccourcir la procédure et de préserver les relations, notamment lorsque des enfants sont en cause.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <div>
+            <h3 class="step-title">Dépôt de la requête</h3>
+            <p class="step-desc">Rédaction et dépôt de la requête en divorce auprès du tribunal judiciaire compétent. Saisine du juge aux affaires familiales et fixation de l'audience de conciliation ou d'orientation.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">04</div>
+          <div>
+            <h3 class="step-title">Audience d'orientation et de mesures provisoires</h3>
+            <p class="step-desc">Le juge fixe les mesures provisoires applicables pendant la procédure : résidence des enfants, pension alimentaire provisionnelle, jouissance du domicile conjugal. Je vous assiste et défends vos intérêts à cette audience.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">05</div>
+          <div>
+            <h3 class="step-title">Instruction et échanges de conclusions</h3>
+            <p class="step-desc">Phase d'échange de pièces et de conclusions entre les avocats. Je prépare les arguments, réfute ceux de la partie adverse et rassemble les éléments nécessaires à la défense de vos intérêts.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">06</div>
+          <div>
+            <h3 class="step-title">Audience de plaidoirie et jugement</h3>
+            <p class="step-desc">Plaidoirie devant le juge aux affaires familiales. Le jugement de divorce fixe définitivement les mesures relatives aux enfants, aux biens et aux droits de chaque partie. Des voies de recours restent ouvertes si nécessaire.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="section-inner">
+      <p class="cta-band-title">Vous faites face à une situation familiale complexe ?</p>
+      <p class="cta-band-sub">Contactez-moi pour un premier entretien confidentiel.</p>
+      <a href="index.html#contact" class="cta-btn">Prendre contact&nbsp;</a>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-name">Sixtine Rauwel — Avocat</div>
+          <div class="footer-sub">Droit pénal &middot; Droit de la famille &middot; Barreau de Lille</div>
+        </div>
+        <nav class="footer-nav" aria-label="Liens de navigation secondaire">
+          <a href="index.html">Accueil</a>
+          <a href="droit-penal.html">Droit pénal</a>
+          <a href="droit-famille.html">Droit de la famille</a>
+          <a href="index.html#honoraires">Honoraires</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Confidentialité</a>
+        </nav>
+      </div>
+      <div class="footer-legal">
+        <p>Sixtine Rauwel — Avocat inscrite au Barreau de Lille</p>
+        <p>SIREN/SIRET&nbsp;: <span class="placeholder">[À COMPLÉTER]</span> &middot; Assurance RCP&nbsp;: <span class="placeholder">[À COMPLÉTER]</span></p>
+        <p style="margin-top:1rem;">&copy; <span id="yr">2026</span> Sixtine Rauwel. Tous droits réservés. &nbsp;·&nbsp; <a href="mentions-legales.html">Mentions légales</a> &nbsp;·&nbsp; <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var nav=document.querySelector('.nav'), hamburger=document.querySelector('.nav-hamburger'), navMenu=document.getElementById('nav-menu');
+    function onScroll(){ if(nav) nav.classList.toggle('scrolled',window.scrollY>50); }
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+    if(hamburger&&nav){
+      function closeNav(){ nav.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); }
+      hamburger.addEventListener('click',function(e){ e.stopPropagation(); var o=nav.classList.toggle('open'); hamburger.setAttribute('aria-expanded',o?'true':'false'); });
+      if(navMenu) navMenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeNav); });
+      document.addEventListener('click',function(e){ if(nav.classList.contains('open')&&!nav.contains(e.target)) closeNav(); });
+      window.addEventListener('keydown',function(e){ if(e.key==='Escape') closeNav(); });
+    }
+    var yr=document.getElementById('yr'); if(yr) yr.textContent=new Date().getFullYear();
+  }());
+  </script>
+</body>
+</html>

@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Maître Sixtine Rauwel, avocate pénaliste au Barreau de Lille. Défense pénale, garde à vue, instruction judiciaire, comparution immédiate, cour d'assises, partie civile.">
+  <meta name="description" content="Sixtine Rauwel, avocat au Barreau de Lille. Droit pénal (garde à vue, instruction judiciaire, cour d'assises) et droit de la famille (divorce, autorité parentale). Cabinet à Lille.">
   <meta name="robots" content="index, follow">
-  <title>Maître Sixtine Rauwel — Avocate pénaliste à Lille</title>
+  <link rel="canonical" href="https://www.sixtinerauwelavocat.fr/">
+  <title>Sixtine Rauwel — Avocat | Droit pénal · Droit de la famille | Lille</title>
 
   <!-- Preconnect pour les fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -645,6 +646,26 @@
       font-size: var(--t-sm);
       color: rgba(255,255,255,0.48);
       line-height: 1.72;
+      margin-bottom: 1.4rem;
+    }
+
+    .domain-link {
+      display: inline-block;
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8BA8CC;
+      transition: color 0.2s, letter-spacing 0.2s;
+    }
+    .domain-link:hover { color: #fff; letter-spacing: 0.15em; }
+
+    /* 2 cartes max — pleine largeur dès tablette */
+    .domains-grid--two {
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 560px) {
+      .domains-grid--two { grid-template-columns: repeat(2, 1fr); }
     }
 
     /* ================================================================
@@ -828,11 +849,87 @@
       line-height: 1.65;
     }
 
+    .form-secret-notice {
+      font-size: var(--t-xs);
+      color: var(--secondary);
+      background: var(--accent-light);
+      border-left: 2px solid var(--accent);
+      padding: 0.55rem 0.85rem;
+      margin-bottom: 0.65rem;
+      line-height: 1.6;
+    }
+
     .form-notice {
       font-size: var(--t-xs);
       color: var(--secondary);
       line-height: 1.7;
       margin-bottom: 1.5rem;
+    }
+
+    /* ================================================================
+       SECTION 05 — HONORAIRES
+       ================================================================ */
+    .honoraires { background: var(--bg); }
+
+    .honoraires-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      margin-top: 3rem;
+    }
+    @media (min-width: 720px) {
+      .honoraires-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .honoraires-block {
+      border-top: 1px solid var(--rule);
+      padding-top: 1.75rem;
+    }
+    .honoraires-block-title {
+      font-family: var(--font-display);
+      font-size: var(--t-lg);
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1.1rem;
+    }
+    .honoraires-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .honoraires-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--rule);
+      font-size: var(--t-sm);
+    }
+    .honoraires-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .honoraires-row-label { color: var(--secondary); flex-shrink: 0; }
+    .honoraires-row-value { color: var(--ink); font-weight: 500; text-align: right; }
+    .honoraires-note {
+      margin-top: 1.4rem;
+      font-size: var(--t-xs);
+      color: var(--secondary);
+      line-height: 1.75;
+    }
+    .honoraires-note strong { color: var(--ink); }
+    .honoraires-aj {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      background: var(--accent-light);
+      border-left: 2px solid var(--accent);
+      font-size: var(--t-sm);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+    .honoraires-aj-title {
+      font-family: var(--font-display);
+      font-size: var(--t-base);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
     }
 
     .btn-submit {
@@ -965,6 +1062,7 @@
       <li><a href="#presentation">Présentation</a></li>
       <li><a href="#domaines">Domaines</a></li>
       <li><a href="#accompagnement">Accompagnement</a></li>
+      <li><a href="#honoraires">Honoraires</a></li>
       <li><a href="#contact">Contact</a></li>
       <li class="nav-menu-tel"><a href="tel:0646093898" aria-label="Appeler le 06 46 09 38 98">06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</a></li>
     </ul>
@@ -985,15 +1083,15 @@
       <!-- L'élément signature : la ligne qui se dessine -->
       <div class="hero-rule" aria-hidden="true"></div>
 
-      <p class="hero-pretitle">Avocate pénaliste &middot; Barreau de Lille</p>
+      <p class="hero-pretitle">Avocat au Barreau de Lille &middot; Droit pénal &middot; Droit de la famille</p>
 
       <h1 class="hero-name">
-        <span class="hero-maitre">Maître</span>
-        <span class="hero-surname" aria-label="Sixtine Rauwel">Sixtine Rauwel</span>
+        <span class="hero-maitre">Sixtine Rauwel</span>
+        <span class="hero-surname" aria-label="Avocat">Avocat</span>
       </h1>
 
       <p class="hero-tagline">
-        Chaque affaire pénale engage votre liberté.<br>
+        Chaque dossier engage votre vie.<br>
         Je m'y engage avec vous.
       </p>
 
@@ -1019,23 +1117,23 @@
         <div class="about-photo-col rv d1">
           <figure class="about-photo-frame">
             <img src="photo%20de%20profil.jpeg"
-                 alt="Portrait de Maître Sixtine Rauwel, avocate pénaliste au Barreau de Lille">
+                 alt="Portrait de Sixtine Rauwel, avocat au Barreau de Lille">
           </figure>
         </div>
 
         <!-- Colonne droite : informations + corps de texte -->
         <div class="rv d2">
-          <aside class="about-aside" aria-label="Informations du cabinet">
-            <div class="about-name">Maître Sixtine Rauwel</div>
+          <aside class="about-aside" aria-label="Informations de l'avocat">
+            <div class="about-name">Sixtine Rauwel — Avocat</div>
             <dl class="about-meta">
-              <dt>Cabinet</dt>
-              <dd>SELAS Anne Bazela</dd>
               <dt>Adresse</dt>
-              <dd>3, Place aux Bleuets<br>59000 Lille</dd>
+              <dd><span class="placeholder">[À compléter — adresse du cabinet]</span><br>Lille</dd>
               <dt>Barreau</dt>
               <dd>Barreau de Lille</dd>
               <dt>Assermentation</dt>
               <dd>19 novembre 2025</dd>
+              <dt>Domaines</dt>
+              <dd>Droit pénal · Droit de la famille</dd>
             </dl>
           </aside>
 
@@ -1048,11 +1146,11 @@
               « Je jure, comme avocat, d'exercer mes fonctions avec dignité, conscience, indépendance, probité et humanité. »
             </blockquote>
 
-            <p>Chaque mot de ce serment a une portée opérationnelle en droit pénal. L'indépendance, c'est ne jamais plier face à la pression du dossier ni à la commodité d'un accord rapide. La conscience, c'est connaître votre situation précisément avant de vous conseiller. L'humanité, c'est ne jamais oublier que derrière chaque procédure, il y a une personne dont la vie se joue.</p>
+            <p>Chaque mot de ce serment a une portée opérationnelle, qu'il s'agisse de droit pénal ou de droit de la famille. L'indépendance, c'est ne jamais plier face à la pression du dossier ni à la commodité d'un accord rapide. La conscience, c'est connaître votre situation précisément avant de vous conseiller. L'humanité, c'est ne jamais oublier que derrière chaque procédure, il y a une personne dont la vie se joue.</p>
 
-            <p>J'exerce au sein de la SELAS Anne Bazela, à Lille. Ce cadre me permet d'intervenir dans l'ensemble du ressort du Tribunal judiciaire de Lille, et au-delà lorsque la situation l'exige.</p>
+            <p>J'interviens dans l'ensemble du ressort du Tribunal judiciaire de Lille, et au-delà lorsque la situation l'exige.</p>
 
-            <p>Que vous soyez mis en cause, convoqué ou victime, ma première obligation est la même : comprendre votre dossier avant de parler. Et, une fois que je parle, chaque mot est pesé.</p>
+            <p>Que vous soyez mis en cause, convoqué, victime ou partie à une procédure familiale, ma première obligation est la même : comprendre votre dossier avant de parler. Et, une fois que je parle, chaque mot est pesé.</p>
           </div>
         </div>
 
@@ -1071,44 +1169,22 @@
       </div>
 
       <h2 class="section-title rv" id="h-domaines">Domaines d'intervention</h2>
-      <p class="domains-intro rv d1">De la première heure de garde à vue jusqu'à l'arrêt définitif, j'interviens à chaque stade de la procédure pénale.</p>
+      <p class="domains-intro rv d1">J'interviens en droit pénal et en droit de la famille, à chaque stade de la procédure, devant les juridictions du ressort de Lille et au-delà.</p>
 
-      <div class="domains-grid" role="list">
+      <div class="domains-grid domains-grid--two rv d2" role="list">
 
-        <article class="domain-card rv" role="listitem">
+        <article class="domain-card" role="listitem">
           <div class="domain-n">01</div>
-          <h3 class="domain-title">Garde à vue</h3>
-          <p class="domain-desc">Assistance dès la convocation ou le placement en garde à vue. Je me déplace rapidement pour être présente lors des auditions et vous conseiller sur vos droits dès les premières heures — qui sont souvent les plus déterminantes pour la suite de la procédure.</p>
+          <h3 class="domain-title">Droit pénal</h3>
+          <p class="domain-desc">Défense et représentation à tous les stades de la procédure pénale : garde à vue, instruction judiciaire, audience correctionnelle, cour d'assises, droit pénal des affaires, assistance aux victimes et constitution de partie civile.</p>
+          <a href="droit-penal.html" class="domain-link">Voir le détail →</a>
         </article>
 
-        <article class="domain-card rv d1" role="listitem">
+        <article class="domain-card" role="listitem">
           <div class="domain-n">02</div>
-          <h3 class="domain-title">Instruction judiciaire</h3>
-          <p class="domain-desc">Suivi complet de l'information judiciaire : accès au dossier, demandes d'actes, interrogatoires de première comparution et de mise en examen, contrôle judiciaire, détention provisoire et demandes de mise en liberté.</p>
-        </article>
-
-        <article class="domain-card rv d2" role="listitem">
-          <div class="domain-n">03</div>
-          <h3 class="domain-title">Audience correctionnelle</h3>
-          <p class="domain-desc">Comparution immédiate, citation directe, renvoi correctionnel. Préparation rigoureuse de la défense, présence à l'audience, plaidoirie et suivi du jugement — y compris l'appel si la situation l'impose.</p>
-        </article>
-
-        <article class="domain-card rv" role="listitem">
-          <div class="domain-n">04</div>
-          <h3 class="domain-title">Cour d'assises</h3>
-          <p class="domain-desc">Défense aux assises en première instance et en appel criminel. Ces procédures, qui jugent les crimes, exigent une préparation longue, une capacité à tenir dans la durée et une plaidoirie construite. Je les aborde avec le sérieux qu'elles méritent.</p>
-        </article>
-
-        <article class="domain-card rv d1" role="listitem">
-          <div class="domain-n">05</div>
-          <h3 class="domain-title">Droit pénal des affaires</h3>
-          <p class="domain-desc">Abus de biens sociaux, fraude fiscale, escroquerie, faux et usage de faux, corruption, blanchiment. Défense des personnes physiques et représentation des personnes morales poursuivies pénalement.</p>
-        </article>
-
-        <article class="domain-card rv d2" role="listitem">
-          <div class="domain-n">06</div>
-          <h3 class="domain-title">Victimes — Partie civile</h3>
-          <p class="domain-desc">Se constituer partie civile, c'est faire reconnaître son préjudice dans la procédure pénale. J'accompagne les victimes dans la constitution de leur dossier et la défense de leurs intérêts, de la plainte jusqu'à l'indemnisation.</p>
+          <h3 class="domain-title">Droit de la famille</h3>
+          <p class="domain-desc">Accompagnement dans les situations familiales : divorce (amiable ou contentieux), autorité parentale et garde d'enfants, prestation compensatoire, protection des majeurs vulnérables, violences intrafamiliales.</p>
+          <a href="droit-famille.html" class="domain-link">Voir le détail →</a>
         </article>
 
       </div>
@@ -1126,7 +1202,7 @@
       </div>
 
       <h2 class="section-title rv" id="h-accompagnement">Comment ça se passe</h2>
-      <p class="process-intro rv d1">Vous ne savez pas forcément ce qu'implique concrètement d'avoir un avocat pénaliste à vos côtés. Voici ce à quoi vous pouvez vous attendre.</p>
+      <p class="process-intro rv d1">Vous ne savez pas forcément ce qu'implique concrètement d'avoir un avocat à vos côtés. Voici ce à quoi vous pouvez vous attendre.</p>
 
       <div class="steps">
 
@@ -1175,12 +1251,74 @@
   </section>
 
   <!-- ============================================================
-       05 · CONTACT
+       05 · HONORAIRES
+  ============================================================ -->
+  <section class="honoraires" id="honoraires" aria-labelledby="h-honoraires">
+    <div class="section-inner">
+      <div class="section-head" aria-hidden="true">
+        <span class="sn">05</span>
+        <span class="sr"></span>
+      </div>
+
+      <h2 class="section-title rv" id="h-honoraires">Honoraires</h2>
+      <p class="process-intro rv d1">Les honoraires sont librement fixés, déterminés selon la complexité du dossier, le temps consacré et les diligences accomplies. Une convention d'honoraires est établie et signée avant toute intervention. <strong>Devis établi après le premier rendez-vous.</strong></p>
+
+      <div class="honoraires-grid">
+
+        <div class="rv d1">
+          <div class="honoraires-block">
+            <div class="honoraires-block-title">Modes de facturation</div>
+            <div class="honoraires-rows">
+              <div class="honoraires-row">
+                <span class="honoraires-row-label">Taux horaire</span>
+                <span class="honoraires-row-value"><span class="placeholder">[À COMPLÉTER PAR SIXTINE]</span> € HT / heure</span>
+              </div>
+              <div class="honoraires-row">
+                <span class="honoraires-row-label">Forfait par procédure</span>
+                <span class="honoraires-row-value">Devis sur dossier</span>
+              </div>
+              <div class="honoraires-row">
+                <span class="honoraires-row-label">Provision initiale</span>
+                <span class="honoraires-row-value"><span class="placeholder">[À COMPLÉTER PAR SIXTINE]</span></span>
+              </div>
+            </div>
+            <p class="honoraires-note">Les honoraires sont soumis à la TVA au taux en vigueur (20 %). Les frais de procédure (huissier, expertises, frais d'audience) sont facturés en sus sur justificatifs.</p>
+          </div>
+        </div>
+
+        <div class="rv d2">
+          <div class="honoraires-block">
+            <div class="honoraires-block-title">Première consultation</div>
+            <div class="honoraires-rows">
+              <div class="honoraires-row">
+                <span class="honoraires-row-label">Durée</span>
+                <span class="honoraires-row-value"><span class="placeholder">[À COMPLÉTER]</span></span>
+              </div>
+              <div class="honoraires-row">
+                <span class="honoraires-row-label">Tarif</span>
+                <span class="honoraires-row-value"><span class="placeholder">[À COMPLÉTER PAR SIXTINE]</span> € HT</span>
+              </div>
+            </div>
+            <p class="honoraires-note">La première consultation permet d'analyser votre situation, de répondre à vos questions et d'établir un devis détaillé. Aucun engagement n'est requis à l'issue de cet entretien.</p>
+          </div>
+
+          <div class="honoraires-aj rv d3">
+            <div class="honoraires-aj-title">Aide juridictionnelle</div>
+            <p>Si vos ressources le permettent, vous pouvez bénéficier de l'aide juridictionnelle totale ou partielle (prise en charge par l'État). L'éligibilité est examinée ensemble dès le premier entretien. Plus d'informations sur <a href="https://www.service-public.fr/particuliers/vosdroits/F18074" target="_blank" rel="noopener noreferrer">service-public.fr</a>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       06 · CONTACT
   ============================================================ -->
   <section class="contact" id="contact" aria-labelledby="h-contact">
     <div class="section-inner">
       <div class="section-head" aria-hidden="true">
-        <span class="sn">05</span>
+        <span class="sn">06</span>
         <span class="sr"></span>
       </div>
 
@@ -1196,8 +1334,8 @@
             <dd><a href="tel:0646093898">06&nbsp;46&nbsp;09&nbsp;38&nbsp;98</a></dd>
             <dt>Email</dt>
             <dd><a href="mailto:srauwel.avocat@outlook.fr">srauwel.avocat@outlook.fr</a></dd>
-            <dt>Cabinet</dt>
-            <dd>SELAS Anne Bazela<br>3, Place aux Bleuets<br>59000 Lille</dd>
+            <dt>Adresse</dt>
+            <dd><span class="placeholder">[À compléter — adresse du cabinet]</span><br>Lille</dd>
             <dt>Barreau</dt>
             <dd>Barreau de Lille</dd>
           </dl>
@@ -1234,7 +1372,8 @@
 
             <div class="form-group">
               <label for="message" class="form-label">Votre situation, en quelques mots <span aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" class="form-field" required aria-required="true" placeholder="Décrivez brièvement votre situation. Ces informations sont couvertes par le secret professionnel dès réception."></textarea>
+              <p class="form-secret-notice">🔒 Les informations que vous partagez ici sont couvertes par le secret professionnel de l'avocat dès réception.</p>
+              <textarea id="message" name="message" class="form-field" required aria-required="true" placeholder="Décrivez brièvement votre situation…"></textarea>
             </div>
 
             <p class="form-notice">
@@ -1261,24 +1400,30 @@
 
       <div class="footer-top">
         <div>
-          <div class="footer-name">Maître Sixtine Rauwel</div>
-          <div class="footer-sub">Avocate pénaliste &middot; Barreau de Lille</div>
+          <div class="footer-name">Sixtine Rauwel — Avocat</div>
+          <div class="footer-sub">Droit pénal &middot; Droit de la famille &middot; Barreau de Lille</div>
         </div>
         <nav class="footer-nav" aria-label="Liens de navigation secondaire">
           <a href="#presentation">Présentation</a>
           <a href="#domaines">Domaines</a>
           <a href="#accompagnement">Accompagnement</a>
+          <a href="#honoraires">Honoraires</a>
           <a href="#contact">Contact</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Confidentialité</a>
         </nav>
       </div>
 
       <div class="footer-legal">
-        <p>Cabinet Sixtine Rauwel · SELAS Anne Bazela · 3, Place aux Bleuets, 59000 Lille</p>
-        <p>Membre du Barreau de Lille · Assurance RC Professionnelle&nbsp;: <span class="placeholder">[À COMPLÉTER — assureur et n° de police]</span></p>
-        <p>SIRET&nbsp;: <span class="placeholder">[À COMPLÉTER]</span> &middot; N° TVA intracommunautaire&nbsp;: <span class="placeholder">[À COMPLÉTER]</span></p>
+        <p>Sixtine Rauwel — Avocat inscrite au Barreau de Lille</p>
+        <p><span class="placeholder">[À compléter — adresse du cabinet]</span>, Lille</p>
+        <p>Assurance RC Professionnelle&nbsp;: <span class="placeholder">[À COMPLÉTER — assureur et n° de police]</span></p>
+        <p>SIREN/SIRET&nbsp;: <span class="placeholder">[À COMPLÉTER]</span> &middot; N° TVA intracommunautaire&nbsp;: <span class="placeholder">[À COMPLÉTER]</span></p>
         <p>Règlement intérieur national de la profession d'avocat disponible sur le site du <a href="https://www.barreau-de-lille.fr" target="_blank" rel="noopener noreferrer">Barreau de Lille</a>.</p>
-        <p style="margin-top: 1rem;">
-          &copy; <span id="yr">2025</span> Maître Sixtine Rauwel. Tous droits réservés.
+        <p style="margin-top:1rem;">
+          &copy; <span id="yr">2026</span> Sixtine Rauwel. Tous droits réservés. &nbsp;·&nbsp;
+          <a href="mentions-legales.html">Mentions légales</a> &nbsp;·&nbsp;
+          <a href="politique-confidentialite.html">Politique de confidentialité</a>
         </p>
       </div>
 
